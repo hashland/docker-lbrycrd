@@ -1,12 +1,7 @@
 FROM phusion/baseimage:0.11
 MAINTAINER Julian Haupt <julian.haupt@hashland.cc>
 
-RUN	apt-get update -qq && \
-        apt-get upgrade -y && \
-        apt-get install -y curl unzip supervisor sudo && \
-      	apt-get clean autoclean && \
-      	apt-get autoremove --yes && \
-      	rm -rf /var/lib/{apt,dpkg,cache,log}/
+RUN	install_clean curl unzip
 
 ENV     TERM xterm
 
