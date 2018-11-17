@@ -36,7 +36,7 @@ Default Ports:
 ```
 docker run -it \
 -v /var/volumes/lbrycrd:/var/lib/lbrycrd \
--e BITCOIND_PARAMS="-testnet=1" \
+-e LBRYCRD_PARAMS="-testnet=1" \
 --name bitcoin-regtest \
 -p 19245:19245 \
 -p 19246:19246 \
