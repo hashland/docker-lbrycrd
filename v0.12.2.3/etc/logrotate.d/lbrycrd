@@ -1,0 +1,6 @@
+/var/lib/lbrycrd/debug.log {
+    daily
+    rotate 3
+    missingok
+    copytruncate
+}

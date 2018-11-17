@@ -1,0 +1,22 @@
+#!/bin/sh
+
+export LC_ALL=C
+
+if [ ! -f ${LBRYCRD_HOME}/lbrycrd.conf ]; then
+
+rpcpassword=$(openssl rand -base64 12)
+
+cat <<EOF >${LBRYCRD_HOME}/lbrycrd.conf
+rpcuser=lbrycrd
+rpcpassword=$rpcpassword
+rpcthreads=4
+
+rpcallowip=172.16.0.0/12
+rpcallowip=192.168.0.0/16
+rpcallowip=10.0.0.0/8
+EOF
+
+fi
+
+
+exec /sbin/setuser ${LBRYCRD_USER} /usr/local/bin/lbrycrdd -printtoconsole -conf=${LBRYCRD_HOME}/lbrycrd.conf -datadir=${LBRYCRD_HOME} ${LBRYCRD_PARAMS}
