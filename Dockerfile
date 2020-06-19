@@ -5,8 +5,8 @@ RUN	install_clean curl unzip
 
 ENV     TERM xterm
 
-ENV     LBRYCRD_VERSION 0.17.3.2
-ENV	LBRYCRD_FILENAME lbrycrd-linux-1732.zip
+ENV     LBRYCRD_VERSION 0.17.4.5
+ENV	LBRYCRD_FILENAME lbrycrd-linux-1745.zip
 
 ENV     LBRYCRD_USER_ID         1000
 ENV     LBRYCRD_USER            lbry
